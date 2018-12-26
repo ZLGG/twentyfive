@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--创建服务：生产者-->
+    <bean id="testApi" class="com.taobao.hsf.app.spring.util.HSFSpringProviderBean" init-method="init">
+        <property name="serviceInterface" value="com.example.twentyfive.service.SayService"/>
+        <!--${dtyunxi.service.version}，${dtyunxi.regist.group},在tomcat vm参数配置中获取-->
+        <property name="serviceVersion" value="${dtyunxi.service.version}"/>
+        <property name="serviceGroup" value="${dtyunxi.regist.group}"/>
+        <property name="target" ref="sayService"/>
+    </bean>
+    <!--消费者class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean"-->
+</beans>
