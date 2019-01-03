@@ -1,0 +1,3078 @@
+{
+  "mappings": {
+    "tr_order": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "order_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "client_source_type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "source_channel": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "source_order_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "source_shop_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "seller_id": {
+          "type": "long"
+        },
+        "shop_id": {
+          "type": "long"
+        },
+        "delivery_warehouse_id": {
+          "type": "long"
+        },
+        "store_id": {
+          "type": "long"
+        },
+        "org_id": {
+          "type": "long"
+        },
+        "member_id": {
+          "type": "long"
+        },
+        "member_username": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "transaction_type": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "frozen_status": {
+          "type": "integer"
+        },
+        "need_visit_audit": {
+          "type": "integer"
+        },
+        "need_finance_audit": {
+          "type": "integer"
+        },
+        "audit_status": {
+          "type": "integer"
+        },
+        "visit_reject_reason": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "visit_examine_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "finance_reject_reason": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "finance_examine_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "total_item_num": {
+          "type": "long"
+        },
+        "pay_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "item_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "gift_total_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "coupon_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "activity_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "activity_theory_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "point_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "ded_add_price_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "ded_gift_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "freight_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "freight_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "platform_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "shop_discount_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "commission_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "pay_method": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "offline_pay_method": {
+          "type": "integer"
+        },
+        "remark": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "seller_remark": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "is_fetch": {
+          "type": "integer"
+        },
+        "fetch_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "fetch_status": {
+          "type": "integer"
+        },
+        "order_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "pay_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "shipping_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "collect_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "finish_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "cancel_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "cancel_type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "cancel_desc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "abort_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "is_settlement": {
+          "type": "integer"
+        },
+        "settlement_status": {
+          "type": "long"
+        },
+        "settlement_msg": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "settlement_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "emp_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "is_luck_draw": {
+          "type": "integer"
+        },
+        "is_error": {
+          "type": "integer"
+        },
+        "error_reason": {
+          "type": "integer"
+        },
+        "is_pay": {
+          "type": "integer"
+        },
+        "is_pay_error": {
+          "type": "integer"
+        },
+        "pay_error_reason": {
+          "type": "integer"
+        },
+        "operate_type": {
+          "type": "integer"
+        },
+        "order_detail": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 5000
+            }
+          }
+        },
+        "original_order_id": {
+          "type": "long"
+        },
+        "original_member_level": {
+          "type": "integer"
+        },
+        "original_member_status": {
+          "type": "integer"
+        },
+        "scan_shopping_inv_data": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "sales_slip_id": {
+          "type": "long"
+        },
+        "merchant_acct_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "referrer_member_id": {
+          "type": "long"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "def1": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def2": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def3": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def4": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def5": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def6": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def7": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def8": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def9": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def10": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def11": {
+          "type": "long"
+        },
+        "def12": {
+          "type": "long"
+        },
+        "def13": {
+          "type": "long"
+        },
+        "def14": {
+          "type": "long"
+        },
+        "def15": {
+          "type": "long"
+        },
+        "def16": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def17": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def18": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def19": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def20": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def21": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def22": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def23": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def24": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def25": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        }
+      }
+    },
+    "tr_order_item": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_order"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "seller_id": {
+          "type": "long"
+        },
+        "shop_id": {
+          "type": "long"
+        },
+        "member_id": {
+          "type": "long"
+        },
+        "order_id": {
+          "type": "long"
+        },
+        "catalog_id": {
+          "type": "long"
+        },
+        "brand_id": {
+          "type": "long"
+        },
+        "item_id": {
+          "type": "long"
+        },
+        "item_type": {
+          "type": "integer"
+        },
+        "item_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "item_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "item_num": {
+          "type": "long"
+        },
+        "sku_id": {
+          "type": "long"
+        },
+        "sku_desc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "item_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "item_discounted_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "platform_discount_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "shop_discount_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "subtotal_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "actual_subtotal_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "warning_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "freight_insurance_fee": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "is_presell": {
+          "type": "integer"
+        },
+        "is_not_condition": {
+          "type": "integer"
+        },
+        "item_team_data": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "is_discount": {
+          "type": "integer"
+        },
+        "discount_flag": {
+          "type": "integer"
+        },
+        "enjoy_alias": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "orig_apsime_cd": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "machine_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "special_price_type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "def1": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def2": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def3": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def4": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def5": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def6": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 2000
+            }
+          }
+        },
+        "def7": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def8": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def9": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def10": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def11": {
+          "type": "long"
+        },
+        "def12": {
+          "type": "long"
+        },
+        "def13": {
+          "type": "long"
+        },
+        "def14": {
+          "type": "long"
+        },
+        "def15": {
+          "type": "long"
+        },
+        "def16": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def17": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def18": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def19": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def20": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def21": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def22": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def23": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def24": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def25": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        }
+      }
+    },
+    "tr_order_delivery": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_order"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "shop_id": {
+          "type": "long"
+        },
+        "seller_id": {
+          "type": "long"
+        },
+        "member_id": {
+          "type": "long"
+        },
+        "order_id": {
+          "type": "long"
+        },
+        "return_apply_id": {
+          "type": "long"
+        },
+        "waybill_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 1024
+            }
+          }
+        },
+        "logistics_id": {
+          "type": "long"
+        },
+        "delivery_type": {
+          "type": "integer"
+        },
+        "delivery_id": {
+          "type": "long"
+        },
+        "logistics_company": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "logistics_company_desc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "logistics_cost": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "logistics_bear": {
+          "type": "integer"
+        },
+        "address_id": {
+          "type": "long"
+        },
+        "delivery_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "address": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_mobile": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_phone": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "province_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "city_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "area_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "detailed": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "street_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "postcode": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "remark": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "province_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "city_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "area_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "street_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    },
+    "tr_return_apply": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "seller_id": {
+          "type": "long"
+        },
+        "shop_id": {
+          "type": "long"
+        },
+        "member_id": {
+          "type": "long"
+        },
+        "order_id": {
+          "type": "long"
+        },
+        "source_return_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "status": {
+          "type": "integer"
+        },
+        "return_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "aftersale_method": {
+          "type": "integer"
+        },
+        "refund_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "return_item_num": {
+          "type": "long"
+        },
+        "return_item_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "close_type": {
+          "type": "integer"
+        },
+        "close_reason": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "return_reason": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "reject_reason": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "return_explain": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "sendout_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "examine_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "receive_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "payment_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "close_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "contact_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "contact_phone": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "operate_type": {
+          "type": "integer"
+        },
+        "return_apply_type": {
+          "type": "integer"
+        },
+        "is_whole": {
+          "type": "integer"
+        },
+        "is_batch": {
+          "type": "integer"
+        },
+        "examine_result": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "is_complete_refund": {
+          "type": "integer"
+        },
+        "remark": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "seller_remark": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def1": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def2": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def3": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def4": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def5": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def6": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def7": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def8": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def9": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def10": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def11": {
+          "type": "long"
+        },
+        "def12": {
+          "type": "long"
+        },
+        "def13": {
+          "type": "long"
+        },
+        "def14": {
+          "type": "long"
+        },
+        "def15": {
+          "type": "long"
+        },
+        "def16": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def17": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def18": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def19": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def20": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def21": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def22": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def23": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def24": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def25": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        }
+      }
+    },
+    "tr_return_item": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_return_apply"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "seller_id": {
+          "type": "long"
+        },
+        "shop_id": {
+          "type": "long"
+        },
+        "return_apply_id": {
+          "type": "long"
+        },
+        "refund_apply_id": {
+          "type": "long"
+        },
+        "item_id": {
+          "type": "long"
+        },
+        "brand_id": {
+          "type": "long"
+        },
+        "catalog_id": {
+          "type": "long"
+        },
+        "sku_id": {
+          "type": "long"
+        },
+        "item_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "item_num": {
+          "type": "long"
+        },
+        "item_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "item_discounted_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "subtotal_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "actual_subtotal_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "item_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "sku_desc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def1": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def2": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def3": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def4": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def5": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def6": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def7": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def8": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def9": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def10": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def11": {
+          "type": "long"
+        },
+        "def12": {
+          "type": "long"
+        },
+        "def13": {
+          "type": "long"
+        },
+        "def14": {
+          "type": "long"
+        },
+        "def15": {
+          "type": "long"
+        },
+        "def16": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def17": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def18": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def19": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def20": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "def21": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def22": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def23": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def24": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "def25": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        }
+      }
+    },
+    "in_delivery_order": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "warehouse_id": {
+          "type": "long"
+        },
+        "store_id": {
+          "type": "long"
+        },
+        "delivery_order_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "source_order_id": {
+          "type": "long"
+        },
+        "source_order_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "pending_unique_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_type": {
+          "type": "integer"
+        },
+        "channle_type": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "receive_dtm": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "delivery_store_id": {
+          "type": "long"
+        },
+        "shipping_method_cd": {
+          "type": "integer"
+        },
+        "delivery_area_cd": {
+          "type": "integer"
+        }
+      }
+    },
+    "in_delivery_order_cargo": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "in_delivery_order"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "delivery_order_id": {
+          "type": "long"
+        },
+        "cargo_id": {
+          "type": "long"
+        },
+        "cargo_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "cargo_inout_config_id": {
+          "type": "long"
+        },
+        "unpack_id": {
+          "type": "long"
+        },
+        "zx_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "is_pre_sale": {
+          "type": "integer"
+        },
+        "cargo_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "cargo_brand": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "cargo_spec": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "main_measure_unit": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "quantity": {
+          "type": "long"
+        },
+        "inv_price_type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "inv_price_type_desc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "expend_integral": {
+          "type": "long"
+        },
+        "discount_rate": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "actual_receipt_price": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "receivable_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "actual_receipt_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "altvol": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "bonus_nrsv": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "nrsv": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "pv": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "cv": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "sharebas": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "shareamt": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "order_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def1": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def2": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def3": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "def4": {
+          "type": "long"
+        },
+        "def5": {
+          "type": "long"
+        },
+        "def6": {
+          "type": "long"
+        },
+        "def7": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "discount_flag": {
+          "type": "long"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "cargo_space_id": {
+          "type": "long"
+        }
+      }
+    },
+    "in_logistics_trace_record": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "in_delivery_order"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "delivery_order_package_id": {
+          "type": "long"
+        },
+        "delivery_id": {
+          "type": "long"
+        },
+        "order_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "user_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "waybill_number": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "logistics_company_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "logistics_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "logistics_trace_status": {
+          "type": "integer"
+        },
+        "logistics_trace_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "logistics_trace_details": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 800
+            }
+          }
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "package_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    },
+    "tr_order_group": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "group_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "group_status": {
+          "type": "integer"
+        },
+        "total_amount_paid": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "total_amount_due": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "total_freight_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "freight_tax_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "payment_whs_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_whs_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_type": {
+          "type": "integer"
+        },
+        "order_type": {
+          "type": "integer"
+        },
+        "emp_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "shift": {
+          "type": "integer"
+        },
+        "whs_instructions": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "mail_gui_yn": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "order_dt": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        }
+      }
+    },
+    "tr_group_address": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_order_group"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "group_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "order_id": {
+          "type": "long"
+        },
+        "delivery_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_email": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_mobile": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "address_type": {
+          "type": "integer"
+        },
+        "province_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "city_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "area_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "address": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "post_code": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "store_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delivery_time_zone": {
+          "type": "integer"
+        },
+        "carrier_instructions": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        }
+      }
+    },
+    "tr_order_authorizes": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_order_group"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "cc_number": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "auth_dt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "auth_msg": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "auth_cd": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "auth_status": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "expired_dt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "group_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "pay_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "session_dt": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "whs_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "emp_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "shift_cd": {
+          "type": "integer"
+        },
+        "so_type_cd": {
+          "type": "integer"
+        },
+        "cc_number_enc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "cc_number_ev": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "transaction_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "acquiringbk_cd": {
+          "type": "integer"
+        },
+        "term_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "merchant_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "installment_periods": {
+          "type": "integer"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "file_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "credit_back_dt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "auth_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        }
+      }
+    },
+    "tr_order_pay": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "tr_order_group"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "tenant_id": {
+          "type": "long"
+        },
+        "channel_id": {
+          "type": "long"
+        },
+        "group_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "record_id": {
+          "type": "long"
+        },
+        "pay_type": {
+          "type": "integer"
+        },
+        "pay_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "ref_num": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "ref_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "authorize": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "expire_dt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "refnum_enc": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 500
+            }
+          }
+        },
+        "refnum_ev": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "acquiringbk_cd": {
+          "type": "integer"
+        },
+        "installment_periods": {
+          "type": "integer"
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        }
+      }
+    },
+    "in_delivery_order_package": {
+      "dynamic": "true",
+      "_all": {
+        "enabled": false
+      },
+      "_parent": {
+        "type": "in_delivery_order"
+      },
+      "_routing": {
+        "required": true
+      },
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "delivery_order_id": {
+          "type": "long"
+        },
+        "package_no": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "waybill_number": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 1000
+            }
+          }
+        },
+        "tracking_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "channle_type": {
+          "type": "integer"
+        },
+        "logistics_company_id": {
+          "type": "long"
+        },
+        "order_type": {
+          "type": "long"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "package_weight": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "total_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "insure_amount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "insure_fee": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "logistic_fee": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "waybill_generate_type": {
+          "type": "integer"
+        },
+        "pick_up_emp_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "pick_up_date": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "create_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "create_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "update_person": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "update_time": {
+          "type": "date",
+          "ignore_malformed": true,
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||yyyy-MM-dd||epoch_millis"
+        },
+        "dr": {
+          "type": "integer"
+        },
+        "tenant_id": {
+          "type": "long"
+        }
+      }
+    }
+  }
+}

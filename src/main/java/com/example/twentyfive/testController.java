@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.FileOutputStream;
@@ -27,16 +28,14 @@ public class testController {
     @Autowired
     MappingsUtil mappingsUtil;
 
-    DruidPooledConnection connection = null;
-    PreparedStatement pstate = null;
-
     @RequestMapping("/index")
-    public String byIndexName(String indexName) throws Exception{
+    public String byIndexName(@RequestParam(required = true) String indexName,@RequestParam(required = false,defaultValue = "0") int flag) throws Exception{
+        DruidPooledConnection connection = null;
+        PreparedStatement pstate = null;
 
-        FileOutputStream fileOutputStream =null;
-        fileOutputStream = new FileOutputStream("C:\\Users\\123\\Desktop\\Mappings.txt");
+        FileOutputStream fileOutputStream = null;
+        fileOutputStream = new FileOutputStream("D:\\Mappings.txt");
 
-        indexName = "twcart_qa_trade";
         //获取连接
         connection = dbManger.connection();
         String sql = "select * from s_indexbuilder_config where index_name = '"+indexName+"' and dr = 0";
@@ -47,6 +46,9 @@ public class testController {
             ResultSet resultSet = pstate.executeQuery();
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
+            if (resultSet.next() == false) {
+                return indexName+"索引在s_indexbuilder_config中不存在";
+            }
 
             while (resultSet.next()){
                 HashMap<String, Object> map = new HashMap<>();
@@ -67,9 +69,7 @@ public class testController {
 
         }
         log.info("result:{}", JSON.toJSON(list));
-       /* writeMappings("{\n" +
-                "    \"mappings\": {\n" +
-                "      ");*/
+
        fileOutputStream.write(new String("{\n" +
                "    \"mappings\": {\n" +
                "      ").getBytes());
@@ -79,18 +79,18 @@ public class testController {
             String sourceTable = map.get("source_table").toString();
             String parentId = map.get("parent_id").toString();
             if (!parentId.equals("0")) {
-                //connection = druidDataSource.getConnection();
                 pstate =  connection.prepareStatement("select * from s_indexbuilder_config where dr = 0 and id ='" + parentId + "'");
                 ResultSet resultSet = pstate.executeQuery();
                 while (resultSet.next()){
                      parentSourceTable = resultSet.getString(4);
                 }
             }
-            String mappings = mappingsUtil.createMappings(sourceDbName, sourceTable, parentSourceTable);
+            String mappings = mappingsUtil.createMappings(sourceDbName, sourceTable, parentSourceTable, flag);
            // writeMappings(mappings);
-            fileOutputStream.write(mappings.getBytes());
+            if (mappings != null) {
+                fileOutputStream.write(mappings.getBytes());
+            }
             if (map != list.get(list.size() - 1)) {
-                //writeMappings(",");
                 fileOutputStream.write(new String(",").getBytes());
             }
             if (pstate != null) {
@@ -98,9 +98,7 @@ public class testController {
             }
 
         }
-        /*writeMappings("\n" +
-                "   }\n" +
-                "}");*/
+
         fileOutputStream.write(new String("\n" +
                 "   }\n" +
                 "}").getBytes());
@@ -111,9 +109,11 @@ public class testController {
         return "hello,word";
     }
     @RequestMapping("/table")
-    public String bySourceTable(String table) throws Exception{
+    public String bySourceTable(String table,@RequestParam(required = false,defaultValue = "0") int flag) throws Exception{
+        DruidPooledConnection connection = null;
+        PreparedStatement pstate = null;
         FileOutputStream fileOutputStream =null;
-        fileOutputStream = new FileOutputStream("C:\\Users\\123\\Desktop\\Mappings.txt");
+        fileOutputStream = new FileOutputStream("D:\\Mappings.txt");
 
         if (connection == null) {
             connection = dbManger.connection();
@@ -125,6 +125,9 @@ public class testController {
         String sourceTable = null;
         String parent_id = null;
         String parentSourceTable = null;
+        if (resultSet.next() == false) {
+            return table+"表在s_indexbuilder_config中不存在";
+        }
         while (resultSet.next()) {
             sourceDbName = resultSet.getString(3);
             sourceTable = resultSet.getString(4);
@@ -140,22 +143,13 @@ public class testController {
                 parentSourceTable = resultSet1.getString(4);
             }
         }
-        String mappings = mappingsUtil.createMappings(sourceDbName, sourceTable, parentSourceTable);
-        //writeMappings(mappings);
-        fileOutputStream.write(mappings.getBytes());
+        String mappings = mappingsUtil.createMappings(sourceDbName, sourceTable, parentSourceTable, flag);
+        if (mappings != null) {
+            fileOutputStream.write(mappings.getBytes());
+        }
         return "success";
     }
-    /*void writeMappings(String mappings){
-        try {
-            if (fileOutputStream == null) {
-            }
-            fileOutputStream.write(mappings.getBytes());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-
-    }*/
     public Object packageObject(Object object) {
         if (object == null)
             return object;

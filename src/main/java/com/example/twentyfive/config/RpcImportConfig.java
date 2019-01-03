@@ -8,5 +8,5 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration
 @ImportResource({"classpath*:rpc/*.xml",})
-public class TestImportConfig {
+public class RpcImportConfig {
 }
